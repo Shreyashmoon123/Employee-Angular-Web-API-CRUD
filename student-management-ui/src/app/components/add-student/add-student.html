@@ -1,0 +1,98 @@
+
+<div class="container mt-4">
+
+  <div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Add New Student</h4>
+    </div>
+
+    <div class="card-body">
+
+      <form (ngSubmit)="addStudent()" #studentForm="ngForm">
+
+        <div class="row">
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              [(ngModel)]="student.firstName"
+              required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lastName"
+              [(ngModel)]="student.lastName"
+              required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="student.email"
+              required
+              email>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              name="phone"
+              [(ngModel)]="student.phone"
+              required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Course</label>
+            <input
+              type="text"
+              class="form-control"
+              name="course"
+              [(ngModel)]="student.course"
+              required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Age</label>
+            <input
+              type="number"
+              class="form-control"
+              name="age"
+              [(ngModel)]="student.age"
+              required
+              min="1">
+          </div>
+
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="studentForm.invalid">
+          Save Student
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-secondary ms-2"
+          routerLink="/">
+          Cancel
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
